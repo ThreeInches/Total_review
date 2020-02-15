@@ -1,0 +1,29 @@
+﻿生成启动时间为 2020/2/15 17:40:17。
+     1>项目“E:\vs2013\作业练习\总复习\初识C语言\初识C语言\初识C语言.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\vs2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "13指针.c" "14结构体.c"
+         14结构体.c
+     1>e:\vs2013\作业练习\总复习\初识c语言\初识c语言\14结构体.c(14): warning C4047: “初始化”:“int”与“char [3]”的间接级别不同
+         13指针.c
+         正在生成代码...
+       Link:
+         E:\vs2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\vs2013\作业练习\总复习\初识C语言\Debug\初识C语言.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\vs2013\作业练习\总复习\初识C语言\Debug\初识C语言.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\vs2013\作业练习\总复习\初识C语言\Debug\初识C语言.lib" /MACHINE:X86 "Debug\12define定义常量和宏.obj"
+         "Debug\13指针.obj"
+         "Debug\14结构体.obj"
+         "Debug\3全局变量和局部变量.obj"
+         "Debug\2数据类型.obj"
+         "Debug\1第一个C语言程序.obj"
+         "Debug\4变量的使用.obj"
+         "Debug\5常量.obj"
+         "Debug\6字符串,转义字符,注释.obj"
+         "Debug\7选择语句.obj"
+         "Debug\8循环语句.obj"
+         "Debug\9函数.obj"
+         "Debug\10数组的使用.obj"
+         "Debug\11static关键字.obj"
+         初识C语言.vcxproj -> E:\vs2013\作业练习\总复习\初识C语言\Debug\初识C语言.exe
+     1>已完成生成项目“E:\vs2013\作业练习\总复习\初识C语言\初识C语言\初识C语言.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.78

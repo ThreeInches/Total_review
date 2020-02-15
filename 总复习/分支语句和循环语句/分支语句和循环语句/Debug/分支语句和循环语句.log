@@ -1,0 +1,19 @@
+﻿生成启动时间为 2020/2/15 19:28:58。
+     1>项目“E:\vs2013\作业练习\总复习\分支语句和循环语句\分支语句和循环语句\分支语句和循环语句.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\vs2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "7do-while循环.c"
+         7do-while循环.c
+       Link:
+         E:\vs2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\vs2013\作业练习\总复习\分支语句和循环语句\Debug\分支语句和循环语句.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\vs2013\作业练习\总复习\分支语句和循环语句\Debug\分支语句和循环语句.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\vs2013\作业练习\总复习\分支语句和循环语句\Debug\分支语句和循环语句.lib" /MACHINE:X86 "Debug\1判断一个数是否为奇数.obj"
+         "Debug\2输出1-100之间的奇数.obj"
+         "Debug\3输入数字输出对应的星期.obj"
+         "Debug\4输出周内和周么.obj"
+         "Debug\5while语句.obj"
+         "Debug\6for循环.obj"
+         "Debug\7do-while循环.obj"
+         分支语句和循环语句.vcxproj -> E:\vs2013\作业练习\总复习\分支语句和循环语句\Debug\分支语句和循环语句.exe
+     1>已完成生成项目“E:\vs2013\作业练习\总复习\分支语句和循环语句\分支语句和循环语句\分支语句和循环语句.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.45
