@@ -30,5 +30,11 @@
     <ClCompile Include="5模拟用户登录.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="6猜数字游戏.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="7二分查找.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

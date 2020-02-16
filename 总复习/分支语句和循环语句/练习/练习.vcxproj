@@ -69,6 +69,8 @@
     <ClCompile Include="3编写binsearch.c" />
     <ClCompile Include="4演示多个字符从两端向中间汇聚.c" />
     <ClCompile Include="5模拟用户登录.c" />
+    <ClCompile Include="6猜数字游戏.c" />
+    <ClCompile Include="7二分查找.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
