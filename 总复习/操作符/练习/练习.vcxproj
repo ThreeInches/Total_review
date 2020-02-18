@@ -64,10 +64,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10整形提升.c" />
     <ClCompile Include="1操作实现两个数的交换.c" />
     <ClCompile Include="2求一个整数在内存中二进制中1的个数.c" />
     <ClCompile Include="3单目操作符演示.c" />
     <ClCompile Include="4sizeof和数组.c" />
+    <ClCompile Include="5++和--运算符.c" />
+    <ClCompile Include="6测试.c" />
+    <ClCompile Include="7三目运算符.c" />
+    <ClCompile Include="8逗号表达式.c" />
+    <ClCompile Include="9下标引用函数调用和结构成员.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
