@@ -64,7 +64,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="设计程序判断内存字节序.c" />
+    <ClCompile Include="10浮点数在内存中存储.c" />
+    <ClCompile Include="1设计程序判断机器字节序.c" />
+    <ClCompile Include="2设计程序判断机器字节序.c" />
+    <ClCompile Include="3练习1.c" />
+    <ClCompile Include="4练习2.c" />
+    <ClCompile Include="5练习3.c" />
+    <ClCompile Include="6练习4.c" />
+    <ClCompile Include="7练习5.c" />
+    <ClCompile Include="8练习6.c" />
+    <ClCompile Include="9练习7.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
