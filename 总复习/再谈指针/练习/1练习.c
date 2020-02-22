@@ -1,34 +1,84 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main1()
+int main()
 {
-	//str3和str4是同一个常量的字符串，C/C++会把常量字符串存储到单独的一个内存区域，当几个指针指向同一个字符串的时候，他们指向同一块内存；故str3 == str4
-	//str1和str2是初始化不同的数组时候就会开辟不同的内存。故str1 ！= str2
-	char str1[] = "Hello,World!";
-	char str2[] = "Hello,World!";
-	char *str3 = "Hello,World!";
-	char *str4 = "Hello,World!";
+	//一维数组
+	int a[] = { 1, 2, 3, 4 };
+	printf("%d\n", sizeof(a));//16
+	printf("%d\n", sizeof(a + 0));//4
+	printf("%d\n", sizeof(*a));//4
+	printf("%d\n", sizeof(a + 1));//4
+	printf("%d\n", sizeof(a[1]));//4
+	printf("%d\n", sizeof(&a));//4
+	printf("%d\n", sizeof(*&a));//16
+	printf("%d\n", sizeof(&a + 1));//4
+	printf("%d\n", sizeof(&a[0]));//4
+	printf("%d\n", sizeof(&a[0] + 1));//4
 
-	if (str1 == str2)
-	{
-		printf("str1 == str2\n");
-	}
-	else
-	{
-		printf("str1 != str2\n");
-	}
+	/*//字符数组
+	char arr[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
+	printf("%d\n", sizeof(arr));
+	printf("%d\n", sizeof(arr + 0));
+	printf("%d\n", sizeof(*arr));
+	printf("%d\n", sizeof(arr[1]));
+	printf("%d\n", sizeof(&arr));
+	printf("%d\n", sizeof(&arr + 1));
+	printf("%d\n", sizeof(&arr[0] + 1));
+	printf("%d\n", strlen(arr));
+	printf("%d\n", strlen(arr + 0));
+	printf("%d\n", strlen(*arr));
+	printf("%d\n", strlen(arr[1]));
+	printf("%d\n", strlen(&arr));
+	printf("%d\n", strlen(&arr + 1));
+	printf("%d\n", strlen(&arr[0] + 1));*/
 
-	if (str3 == str4)
-	{
-		printf("str3 == str4\n");
-	}
-	else
-	{
-		printf("str3 != str4\n");
-	}
+	//char arr[] = "abcdef";
+	//printf("%d\n", sizeof(arr));
+	//printf("%d\n", sizeof(arr + 0));
+	//printf("%d\n", sizeof(*arr));
+	//printf("%d\n", sizeof(arr[1]));
+	//printf("%d\n", sizeof(&arr));
+	//printf("%d\n", sizeof(&arr + 1));
+	//printf("%d\n", sizeof(&arr[0] + 1));
+	//printf("%d\n", strlen(arr));
+	//printf("%d\n", strlen(arr + 0));
+	//printf("%d\n", strlen(*arr));
+	//printf("%d\n", strlen(arr[1]));
+	//printf("%d\n", strlen(&arr));
+	//printf("%d\n", strlen(&arr + 1));
+	//printf("%d\n", strlen(&arr[0] + 1));
 
+	//char *p = "abcdef";
+	//printf("%d\n", sizeof(p));
+	//printf("%d\n", sizeof(p + 1));
+	//printf("%d\n", sizeof(*p));
+	//printf("%d\n", sizeof(p[0]));
+	//printf("%d\n", sizeof(&p));
+	//printf("%d\n", sizeof(&p + 1));
+	//printf("%d\n", sizeof(&p[0] + 1));
+	//printf("%d\n", strlen(p));
+	//printf("%d\n", strlen(p + 1));
+	//printf("%d\n", strlen(*p));
+	//printf("%d\n", strlen(p[0]));
+	//printf("%d\n", strlen(&p));
+	//printf("%d\n", strlen(&p + 1));
+	//printf("%d\n", strlen(&p[0] + 1));
 
+	////二维数组
+	//int a[3][4] = { 0 };
+	//printf("%d\n", sizeof(a));
+	////printf("%d\n", sizeof(a[0][0]));
+	//printf("%d\n", sizeof(a[0]));
+	//printf("%d\n", sizeof(a[0] + 1));
+	////printf("%d\n", sizeof(*(a[0] + 1)));
+	//printf("%d\n", sizeof(a + 1));
+	//printf("%d\n", sizeof(*(a + 1)));
+	//printf("%d\n", sizeof(&a[0] + 1));
+	//printf("%d\n", sizeof(*(&a[0] + 1)));
+	//printf("%d\n", sizeof(*a));
+	//printf("%d\n", sizeof(a[3]));
 	system("pause");
 	return 0;
 }

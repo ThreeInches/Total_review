@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="练习.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="1练习.c">
       <Filter>源文件</Filter>
     </ClCompile>

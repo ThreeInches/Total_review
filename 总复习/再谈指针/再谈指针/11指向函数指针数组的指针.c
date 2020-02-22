@@ -73,7 +73,7 @@ void bubble_sort(void *base, int count, int size, int(*cmp)(void*, void*))
 	}
 }
 
-int main()
+int main11()
 {
 	//int arr[] = { 3, 1, 2, 7, 5, 6, 4, 8, 9, 0 };
 	char *arr[] = { "aaaa", "dddd", "cccc", "bbbb" };
