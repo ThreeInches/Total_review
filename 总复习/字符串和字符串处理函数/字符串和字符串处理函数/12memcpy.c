@@ -3,13 +3,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+//将source位置开始向后复制num个字节得到数据到destination中。
+//memmove和memcpy的区别是memcpy处理源内存块和目标内存块的时候不可以重叠，若是发生重叠，导致复制结果未定义。
 struct Student
 {
 	char name[20];
 	int age;
 }person, person_copy;
 
-int main()
+int main12()
 {
 	char myname[] = "Pierre de Fermat";
 

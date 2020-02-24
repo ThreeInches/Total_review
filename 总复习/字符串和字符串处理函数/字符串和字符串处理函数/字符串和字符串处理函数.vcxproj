@@ -68,6 +68,7 @@
     <ClCompile Include="11字符转换函数.c" />
     <ClCompile Include="12memcpy.c" />
     <ClCompile Include="13memmove.c" />
+    <ClCompile Include="14memcmp.c" />
     <ClCompile Include="1strlen.c" />
     <ClCompile Include="2strcpy.c" />
     <ClCompile Include="3strcat.c" />
