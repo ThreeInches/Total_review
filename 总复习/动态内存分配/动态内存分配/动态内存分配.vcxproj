@@ -67,6 +67,9 @@
     <ClCompile Include="1malloc.c" />
     <ClCompile Include="2calloc.c" />
     <ClCompile Include="3realloc.c" />
+    <ClCompile Include="5柔性数组.c" />
+    <ClCompile Include="6柔性数组的使用.c" />
+    <ClCompile Include="7柔性数组的设计.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

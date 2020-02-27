@@ -24,5 +24,14 @@
     <ClCompile Include="3realloc.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="5柔性数组.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6柔性数组的使用.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="7柔性数组的设计.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
