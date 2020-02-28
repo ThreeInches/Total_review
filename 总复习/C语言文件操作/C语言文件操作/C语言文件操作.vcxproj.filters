@@ -18,5 +18,26 @@
     <ClCompile Include="1文件类型.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2文件指针.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="3文件的打开和关闭.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="4文件的随机读写.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="5ftell.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6rewind.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="7文件结束判断文本文件.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="8文件结束判断二进制文件.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

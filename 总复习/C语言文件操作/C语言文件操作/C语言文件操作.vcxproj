@@ -65,6 +65,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1文件类型.c" />
+    <ClCompile Include="2文件指针.c" />
+    <ClCompile Include="3文件的打开和关闭.c" />
+    <ClCompile Include="4文件的随机读写.c" />
+    <ClCompile Include="5ftell.c" />
+    <ClCompile Include="6rewind.c" />
+    <ClCompile Include="7文件结束判断文本文件.c" />
+    <ClCompile Include="8文件结束判断二进制文件.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
