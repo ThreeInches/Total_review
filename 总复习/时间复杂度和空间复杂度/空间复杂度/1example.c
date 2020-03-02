@@ -19,7 +19,7 @@ void BubbleSort(int *arr, int n)
 	}
 }
 
-int main()
+int main1()
 {
 	int arr[10] = { 2, 3, 5, 4, 1, 6, 7, 9, 8, 0 };
 	BubbleSort(arr, 10);
