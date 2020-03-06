@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-//无头单向非循环链表
+//带头结点的单向非循环链表
 typedef int SLTDataType;
 
 typedef struct SListNode

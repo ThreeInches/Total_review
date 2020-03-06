@@ -13,13 +13,13 @@ typedef int DLDataType;
 typedef struct ListNode
 {
 	DLDataType data;
-	struct ListNode *next;
-	struct ListNode *prev;
+	struct ListNode *_next;
+	struct ListNode *_prev;
 }ListNode;
 
 typedef struct List
 {
-	ListNode *head;
+	ListNode *_head;
 }List;
 
 //为x申请结点
@@ -46,6 +46,8 @@ void DListInsertAfter(List *plist, ListNode *pos, DLDataType x);
 void DListErasePos(List *plist, ListNode *pos);
 //删除元素x
 void DListEraseX(List *plist, DLDataType x);
+//修改pos位置元素为x
+void DListModify(List *plist, ListNode *pos, DLDataType x);
 //打印双向带头循环链表
 void DListPrint(List *plist);
 #endif //_DLIST_H_
