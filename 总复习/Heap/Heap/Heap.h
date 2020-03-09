@@ -9,6 +9,7 @@
 #include <assert.h>
 
 #define CAPACITY 2
+#define ARRSIZE 11
 
 typedef int HeapDataType;
 
@@ -21,7 +22,7 @@ typedef struct Heap
 
 
 //向下调整算法
-void HeapAdjustdown(Heap *pheap);
+void HeapAdjustdown(Heap *pheap, int root);
 //初始化
 void HeapInit(Heap *pheap, HeapDataType *arr, size_t capacity);
 //销毁
@@ -35,9 +36,9 @@ void HeapPop(Heap *pheap);
 //返回堆顶元素
 HeapDataType HeapTop(Heap *pheap);
 //返回堆的大小
-void HeapSize(Heap *pheap);
+int HeapSize(Heap *pheap);
 //判空
-void HeapEmpty(Heap *pheap);
+int HeapEmpty(Heap *pheap);
 //打印堆
 void HeapPrint(Heap *pheap);
 
