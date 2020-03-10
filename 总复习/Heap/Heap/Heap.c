@@ -4,11 +4,12 @@
 void HeapAdjustdown(Heap *pheap, int root)
 {
 	assert(pheap);
-	int min;
-	int left = 2 * root + 1;
-	int right = 2 * root + 2;
-	while (left < pheap->_size)
+
+	while (2 * root + 1 < pheap->_size)
 	{
+		int min;
+		int left = 2 * root + 1;
+		int right = 2 * root + 2;
 		if (right >= pheap->_size)
 		{
 			min = left;
@@ -23,7 +24,7 @@ void HeapAdjustdown(Heap *pheap, int root)
 			{
 				min = right;
 			}
-		}
+		}	
 		if (pheap->_array[root] < pheap->_array[min])
 		{
 			HeapDataType tmp = pheap->_array[root];
@@ -44,7 +45,7 @@ void HeapInit(Heap *pheap, HeapDataType *arr, size_t capacity)
 	assert(pheap);
 	pheap->_capacity = capacity * 2;
 	pheap->_size = capacity;
-	pheap->_array = (HeapDataType *)calloc(pheap->_capacity, sizeof(HeapDataType));
+	pheap->_array = (HeapDataType *)malloc(pheap->_capacity*sizeof(HeapDataType));
 	assert(pheap->_array);
 	for (int i = 0; i < pheap->_size; i++)
 	{
@@ -89,7 +90,7 @@ void HeapPush(Heap *pheap, HeapDataType x)
 	pheap->_size++;
 	for (int i = (pheap->_size / 2) - 1; i >= 0; i--)
 	{
-		HeapAdjustdown(pheap->_array, i);
+		HeapAdjustdown(pheap, i);
 	}
 }
 
@@ -103,7 +104,7 @@ void HeapPop(Heap *pheap)
 	pheap->_size--;
 	for (int i = (pheap->_size / 2) - 1; i >= 0; i--)
 	{
-		HeapAdjustdown(pheap->_array, i);
+		HeapAdjustdown(pheap, i);
 	}
 }
 
@@ -131,9 +132,32 @@ int HeapEmpty(Heap *pheap)
 //¥Ú”°∂—
 void HeapPrint(Heap *pheap)
 {
-	for (int i = 0; i < pheap->_size; i++)
+	assert(pheap);
+	int count = 0;
+	for (int i = 0; i < (int)log2(pheap->_size); i++)
 	{
-		printf(" %d ", pheap->_array[i]);
+		printf("\n");
+		for (int j = pow(2, i) - 1; j < pow(2, i + 1) - 1; j++)
+		{
+			printf(" %d ", pheap->_array[j]);
+			count++;
+		}
+	}
+	for (int k = count; k < pheap->_size; k++)
+	{
+		printf("%d ", pheap->_array[k]);
 	}
 	printf("\n");
+}
+
+//∂—≈≈–Ú
+void HeapSort(Heap *pheap)
+{
+	assert(pheap);
+	int tmp = pheap->_size;
+	while (pheap->_size > 1)
+	{
+		HeapPop(pheap);
+	}
+	pheap->_size = tmp;
 }

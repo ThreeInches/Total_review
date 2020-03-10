@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <math.h>
 
 #define CAPACITY 2
 #define ARRSIZE 11
@@ -41,5 +42,7 @@ int HeapSize(Heap *pheap);
 int HeapEmpty(Heap *pheap);
 //¥Ú”°∂—
 void HeapPrint(Heap *pheap);
+//∂—≈≈–Ú
+void HeapSort(Heap *pheap);
 
 #endif //_HEAP_H_
