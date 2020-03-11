@@ -30,7 +30,7 @@ void CheckCapacity(Stack *pstack)
 	if (pstack->_size == pstack->_capacity)
 	{
 		pstack->_capacity *= CAPACITY;
-		pstack->_array = (StackDataType *)realloc(pstack->_size, pstack->_capacity*sizeof(StackDataType));
+		pstack->_array = (StackDataType *)realloc(pstack->_array, pstack->_capacity*sizeof(StackDataType));
 	}
 }
 
@@ -58,7 +58,7 @@ StackDataType StackTop(Stack *pstack)
 	{
 		return pstack->_array[pstack->_size - 1];
 	}
-	return -1;
+	return (StackDataType)0;
 }
 
 //返回栈的大小
@@ -77,11 +77,7 @@ int StackSize(Stack *pstack)
 int StackEmpty(Stack *pstack)
 {
 	assert(pstack);
-	if (StackSize(pstack) == -1)
-	{
-		return 1;
-	}
-	return -1;
+	return pstack->_size == 0;
 }
 
 //打印

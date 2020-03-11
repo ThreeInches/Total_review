@@ -8,7 +8,6 @@
 #include <string.h>
 #include <assert.h>
 #include <math.h>
-#include "BinaryTree.h"
 #include "Queue.h"
 #include "Stack.h"
 
@@ -23,6 +22,7 @@ typedef struct BinaryTreeNode
 
 //通过前序遍历数组"ABD##E#H##CF##G##"构建二叉树
 BinaryTreeNode* BinaryTreeCreate(BinaryTreeDataType *arr);
+
 //递归遍历
 //前序遍历
 void BinaryTreePreOrder(BinaryTreeNode *root);
@@ -32,6 +32,7 @@ void BinaryTreeInOrder(BinaryTreeNode *root);
 void BinaryTreePostOrder(BinaryTreeNode *root);
 //层序遍历
 void BinaryTreeLevelOrder(BinaryTreeNode *root);
+
 //非递归遍历
 //前序遍历
 void BinaryTreePreOrderNonR(BinaryTreeNode *root);
@@ -41,10 +42,19 @@ void BinaryTreeInOrderNonR(BinaryTreeNode *root);
 void BinaryTreePostOrderNonR(BinaryTreeNode *root);
 //返回二叉树的结点个数
 int BinaryTreeSize(BinaryTreeNode *root);
+
+//递归实现
 //返回叶子结点个数
 int BinaryTreeLeafSize(BinaryTreeNode *root);
 //返回第K层结点个数
 int BinaryTreeLevelKSize(BinaryTreeNode *root, int k);
+
+//非递归实现
+//返回叶子结点个数
+int BinaryTreeLeafSize(BinaryTreeNode *root);
+//返回第K层结点个数
+int BinaryTreeLevelKSize(BinaryTreeNode *root, int k);
+
 //查找节点x
 BinaryTreeNode* BinaryTreeFind(BinaryTreeNode *root, BinaryTreeDataType x);
 //判断是否为完全二叉树
