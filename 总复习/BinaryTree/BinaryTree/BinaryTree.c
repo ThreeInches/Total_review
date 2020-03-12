@@ -81,10 +81,11 @@ void BinaryTreeLevelOrder(BinaryTreeNode *root)
 //前序遍历
 void BinaryTreePreOrderNonR(BinaryTreeNode *root)
 {
+	assert(root);
 	BinaryTreeNode *cur = root;
 	Stack stack;
 	StackInit(&stack, 100);
-	while (cur)
+	while (!StackEmpty(&stack) || cur)
 	{
 		putchar(cur->_data);
 		if (cur->_right)
@@ -113,7 +114,7 @@ void BinaryTreeInOrderNonR(BinaryTreeNode *root)
 	StackInit(&stack, 100);
 	while (!StackEmpty(&stack) || cur)
 	{
-		for (; cur; cur->_left)
+		for (; cur; cur = cur->_left)
 		{
 			StackPush(&stack, cur);
 		}
@@ -206,7 +207,7 @@ int BinaryTreeLeafSize(BinaryTreeNode *root)
 //返回第K层结点个数
 int BinaryTreeLevelKSize(BinaryTreeNode *root, int k)
 {
-	if (root && k <= 0)
+	if (root == NULL || k <= 0)
 	{
 		return 0;
 	}
@@ -222,9 +223,79 @@ int BinaryTreeLevelKSize(BinaryTreeNode *root, int k)
 
 //非递归实现
 //返回叶子结点个数
-int BinaryTreeLeafSize(BinaryTreeNode *root);
+int BinaryTreeLeafSizeNonR(BinaryTreeNode *root)
+{
+	int count = 0;
+	BinaryTreeNode *cur = root;
+	Stack stack;
+	StackInit(&stack, 100);
+	while (cur)
+	{
+		//putchar(cur->_data);
+		if (cur->_left == NULL && cur->_right == NULL)
+		{
+			count++;
+		}
+		if (cur->_right)
+		{
+			StackPush(&stack, cur->_right);
+		}
+		if (cur->_left)
+		{
+			cur = cur->_left;
+		}
+		else
+		{
+			cur = StackTop(&stack);
+			StackPop(&stack);
+		}
+	}
+	StackDestory(&stack);
+	return count;
+}
+
 //返回第K层结点个数
-int BinaryTreeLevelKSize(BinaryTreeNode *root, int k);
+int BinaryTreeLevelKSizeNonR(BinaryTreeNode *root, int k)
+{
+	if (root == NULL || k <= 0)
+	{
+		return 0;
+	}
+	int level = 0;
+	int levelsize = 0;
+	Queue queue;
+	QueueInit(&queue);
+	QueuePush(&queue, root);
+	while (!QueueEmpty(&queue))
+	{
+		level++;
+		levelsize = QueueSize(&queue);
+		if (level == k)
+		{
+			break;
+		}
+		int count = 0;
+		while (count < levelsize)
+		{
+			count++;
+			BinaryTreeNode *cur = QueueFront(&queue);
+			QueuePop(&queue);
+			if (cur->_left)
+			{
+				QueuePush(&queue, cur->_left);
+			}
+			if (cur->_right)
+			{
+				QueuePush(&queue, cur->_right);
+			}
+		}
+	}
+	QueueDestory(&queue);
+	if (level == k)
+	{
+		return levelsize;
+	}
+}
 
 //查找节点x
 BinaryTreeNode* BinaryTreeFind(BinaryTreeNode *root, BinaryTreeDataType x)
@@ -255,7 +326,41 @@ BinaryTreeNode* BinaryTreeFind(BinaryTreeNode *root, BinaryTreeDataType x)
 }
 
 //判断是否为完全二叉树
-void BinaryTreeComplete(BinaryTreeNode *root);
+int BinaryTreeComplete(BinaryTreeNode *root)
+{
+	if (root == NULL)
+	{
+		return 1;
+	}
+	BinaryTreeNode *cur;
+	Queue queue;
+	QueueInit(&queue);
+	QueuePush(&queue, root);
+	int leaf = 0;
+	while (!QueueEmpty(&queue))
+	{
+		cur = QueueFront(&queue);
+		QueuePop(&queue);
+		if ((leaf && (cur->_left != NULL || cur->_right != NULL)) || (cur->_left == NULL && cur->_right))
+		{
+			return 0;
+		}
+		if (cur->_left != NULL)
+		{
+			QueuePush(&queue, cur->_left);
+		}
+		if (cur->_right != NULL)
+		{
+			QueuePush(&queue, cur->_right);
+		}
+		if (cur->_left == NULL || cur->_right == NULL)
+		{
+			leaf = 1;
+		}
+	}
+	return 1;
+	QueueDestory(&queue);
+}
 
 //销毁
 void BinaryTreeDestory(BinaryTreeNode *root)
@@ -269,6 +374,3 @@ void BinaryTreeDestory(BinaryTreeNode *root)
 		root = NULL;
 	}
 }
-
-//打印二叉树节点
-void BinaryTreePrint(BinaryTreeNode *root);

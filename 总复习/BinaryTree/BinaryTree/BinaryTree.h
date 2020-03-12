@@ -51,17 +51,15 @@ int BinaryTreeLevelKSize(BinaryTreeNode *root, int k);
 
 //非递归实现
 //返回叶子结点个数
-int BinaryTreeLeafSize(BinaryTreeNode *root);
+int BinaryTreeLeafSizeNonR(BinaryTreeNode *root);
 //返回第K层结点个数
-int BinaryTreeLevelKSize(BinaryTreeNode *root, int k);
+int BinaryTreeLevelKSizeNonR(BinaryTreeNode *root, int k);
 
 //查找节点x
 BinaryTreeNode* BinaryTreeFind(BinaryTreeNode *root, BinaryTreeDataType x);
 //判断是否为完全二叉树
-void BinaryTreeComplete(BinaryTreeNode *root);
+int BinaryTreeComplete(BinaryTreeNode *root);
 //销毁
 void BinaryTreeDestory(BinaryTreeNode *root);
-//打印二叉树节点
-void BinaryTreePrint(BinaryTreeNode *root);
 
 #endif //_BINARYTREE_H_
