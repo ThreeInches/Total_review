@@ -81,25 +81,22 @@ void BinaryTreeLevelOrder(BinaryTreeNode *root)
 //Ç°Ðò±éÀú
 void BinaryTreePreOrderNonR(BinaryTreeNode *root)
 {
-	assert(root);
 	BinaryTreeNode *cur = root;
 	Stack stack;
 	StackInit(&stack, 100);
-	while (!StackEmpty(&stack) || cur)
+	while (cur || !StackEmpty(&stack))
 	{
-		putchar(cur->_data);
-		if (cur->_right)
+		while (cur)
 		{
-			StackPush(&stack, cur->_right);
-		}
-		if (cur->_left)
-		{
+			putchar(cur->_data);
+			StackPush(&stack, cur);
 			cur = cur->_left;
 		}
-		else
+		if (!StackEmpty(&stack))
 		{
 			cur = StackTop(&stack);
 			StackPop(&stack);
+			cur = cur->_right;
 		}
 	}
 	StackDestory(&stack);
@@ -164,22 +161,20 @@ int BinaryTreeSize(BinaryTreeNode *root)
 	BinaryTreeNode *cur = root;
 	Stack stack;
 	StackInit(&stack, 100);
-	while (cur)
+	while (cur || !StackEmpty(&stack))
 	{
-		count++;
-		//putchar(cur->_data);
-		if (cur->_right)
+		while (cur)
 		{
-			StackPush(&stack, cur->_right);
-		}
-		if (cur->_left)
-		{
+			//putchar(cur->_data);
+			count++;
+			StackPush(&stack, cur);
 			cur = cur->_left;
 		}
-		else
+		if (!StackEmpty(&stack))
 		{
 			cur = StackTop(&stack);
 			StackPop(&stack);
+			cur = cur->_right;
 		}
 	}
 	StackDestory(&stack);

@@ -21,7 +21,7 @@ int main()
 	putchar('\n');
 	BinaryTreePostOrderNonR(root);
 	putchar('\n');
-	//printf("BinaryTreeSize = %d\n", BinaryTreeSize(root));
+	printf("BinaryTreeSize = %d\n", BinaryTreeSize(root));
 	printf("BinaryTreeLeafSize = %d\n", BinaryTreeLeafSize(root));
 	printf("BinaryTreeLevelKSize = %d\n", BinaryTreeLevelKSize(root, 1));
 	printf("BinaryTreeLevelKSize = %d\n", BinaryTreeLevelKSize(root, 2));
