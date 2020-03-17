@@ -23,10 +23,12 @@ void InstertSort(SeqList *psl);
 //ShellSort£®œ£∂˚≈≈–Ú£©
 void ShellSort(SeqList *psl);
 //MergeSort£®πÈ≤¢≈≈–Ú£©
+void DealMergeSort(SeqList *psl, SeqList *tmp, int start, int end);
 void MergeSort(SeqList *psl);
 //QuickSort£®øÏÀŸ≈≈–Ú£©
 void QuickSort(SeqList *psl);
 //HeapSort£®∂—≈≈–Ú£©
+void HeapAdjustDown(SeqList *psl, int root);
 void HeapSort(SeqList *psl);
 //CountSort£®º∆ ˝≈≈–Ú£©
 void CountSort(SeqList *psl);
