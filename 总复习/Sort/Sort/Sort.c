@@ -137,11 +137,9 @@ void DealMergeSort(SeqList *psl, SeqList *tmp, int start, int end)
 
 void MergeSort(SeqList *psl)
 {
-	SeqList tmp1;
-	SeqList *tmp = &tmp1;
-	DealMergeSort(psl, tmp, 0, psl->_size);
-	//free(tmp);
-	//tmp = NULL;
+	SeqList tmp;
+	SeqListInit(&tmp, 5000);
+	DealMergeSort(psl, &tmp, 0, psl->_size);
 }
 
 //QuickSort（快速排序）
@@ -201,8 +199,8 @@ void HeapSort(SeqList *psl)
 //CountSort（计数排序）
 void CountSort(SeqList *psl)
 {
-	SeqList tmp;
-	SeqListInit(&tmp, 5000);
+	SeqList count;
+	SeqListInit(&count, 5000);
 	int _max = psl->_array[0];
 	int _min = psl->_array[0];
 	for (int i = 0; i < psl->_size; i++)
@@ -216,14 +214,58 @@ void CountSort(SeqList *psl)
 			_min = psl->_array[i];
 		}
 	}
-	
-	for (int i = 0; i < _max - _min + 1; i++)
+	int _size = _max - _min + 1;
+	for (int i = 0; i < count._size; i++)
 	{
-
+		SeqListPushBack(&count, 0);
 	}
+	for (int i = 0; i < psl->_size; i++)
+	{
+		count._array[psl->_array[i] - _min]++;
+	}
+	for (int i = 0; i < _size; i++)
+	{
+		count._array[i] += count._array[i - 1];
+	}
+	SeqList tmp;
+	SeqListInit(&tmp, 5000);
+	for (int i = 0; i < tmp._size; i++)
+	{
+		SeqListPushBack(&tmp, 0);
+	}
+	for (int i = psl->_size - 1; i >= 0; i--)
+	{
+		count._array[psl->_array[i] - _min]--;
+		tmp._array[count._array[psl->_array[i] - _min]] = psl->_array[i];
+	}
+	for (int i = 0; i < psl->_size; i++)
+	{
+		psl->_array[i] = tmp._array[i];
+	}
+	SeqListDestory(&count);
+	SeqListDestory(&tmp);
 }
 
 //BucketSort（桶排序）
-void BucketSort(SeqList *psl);
+void BucketSort(SeqList *psl)
+{
+	int bucket[5000];
+	for (int i = 0; i < 5000; i++)
+	{
+		bucket[i] = 0;
+	}
+	for (int i = 0; i < psl->_size; i++)
+	{
+		bucket[psl->_array[i]]++;
+	}
+	for (int i = 0; i <psl->_size; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			psl->_array[i] = bucket[i];
+		}
+	}
+}
+
 //RadixSort（基数排序）
 void RadixSort(SeqList *psl);
