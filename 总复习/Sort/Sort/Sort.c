@@ -140,6 +140,7 @@ void MergeSort(SeqList *psl)
 	SeqList tmp;
 	SeqListInit(&tmp, 5000);
 	DealMergeSort(psl, &tmp, 0, psl->_size);
+	SeqListDestory(&tmp);
 }
 
 //QuickSort（快速排序）
@@ -268,4 +269,52 @@ void BucketSort(SeqList *psl)
 }
 
 //RadixSort（基数排序）
-void RadixSort(SeqList *psl);
+int GetMax(SeqList *psl)
+{
+	int _max = psl->_array[0];
+	for (int i = 0; i < psl->_size; i++)
+	{
+		if (_max < psl->_array[i])
+		{
+			_max = psl->_array[i];
+		}
+	}
+	return _max;
+}
+
+void RadixCountSort(SeqList *psl, int exp)
+{
+	SeqList tmp;
+	SeqList bucket;
+	SeqListInit(&tmp, 5000);
+	SeqListInit(&bucket, 10);
+	for (int i = 0; i < psl->_size; i++)
+	{
+		bucket._array[(psl->_array[i] / exp) % 10]++;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		bucket._array[i] += bucket._array[i - 1];
+	}
+	for (int i = psl->_size - 1; i >= 0; i--)
+	{
+		tmp._array[bucket._array[(psl->_array[i] / exp) % 10] - 1] = psl->_array[i];
+		bucket._array[(psl->_array[i] / exp) % 10]--;
+	}
+	for (int i = 0; i < psl->_size; i++)
+	{
+		psl->_array[i] = tmp._array[i];
+	}
+	SeqListDestory(&tmp);
+	SeqListDestory(&bucket);
+}
+
+void RadixSort(SeqList *psl)
+{
+	int exp;
+	int _max = GetMax(psl);
+	for (int exp = 1; _max / exp > 0; exp *= 10)
+	{
+		RadixCountSort(psl, exp);
+	}
+}
