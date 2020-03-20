@@ -10,6 +10,7 @@
 #include <time.h>
 #include <assert.h>
 #include "SeqList.h"
+#include "Queue.h"
 
 //交换函数
 void Swap(int *x, int *y);
@@ -26,7 +27,19 @@ void ShellSort(SeqList *psl);
 void DealMergeSort(SeqList *psl, SeqList *tmp, int start, int end);
 void MergeSort(SeqList *psl);
 //QuickSort（快速排序）
+//寻找基准值下标的方法
+//hoare法
+int GetIndexHoareWay(SeqList *psl, int left, int right);
+//双指针法1
+int GetIndexDoublePointWay1(SeqList *psl, int left, int right);
+//双指针法2
+int GetIndexDoublePointWay2(SeqList *psl, int left, int right);
+//挖坑法
+int GetIndexDigWay(SeqList *psl, int left, int right);
+void DealQuickSort(SeqList *psl, int left, int right);
 void QuickSort(SeqList *psl);
+//快速排序非递归
+void QuickSortNonR(SeqList *psl);
 //HeapSort（堆排序）
 void HeapAdjustDown(SeqList *psl, int root);
 void HeapSort(SeqList *psl);

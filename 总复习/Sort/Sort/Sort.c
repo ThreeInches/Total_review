@@ -9,6 +9,7 @@ void Swap(int *x, int *y)
 }
 
 //BubbleSort（冒泡排序）
+// O(n^2)   O(1)    稳定 
 void BubbleSort(SeqList *psl)
 {
 	if (psl->_size == 0)
@@ -28,12 +29,13 @@ void BubbleSort(SeqList *psl)
 }
 
 //SelectSort（选择排序）
+// O(n^2)   O(1)    不稳定
 void SelectSort(SeqList *psl)
 {
-	//if (psl->_size == 0)
-	//{
-	//	return;
-	//}
+	if (psl->_size == 0)
+	{
+		return;
+	}
 	for (int i = 0; i < psl->_size - 1; i++)
 	{
 		int min = i;
@@ -49,6 +51,8 @@ void SelectSort(SeqList *psl)
 }
 
 //InstertSort（插入排序）
+// O(n^2)     O(1)    稳定
+//  最坏 O(n^2)   最好 O(n)
 void InstertSort(SeqList *psl)
 {
 	if (psl->_size == 0)
@@ -144,7 +148,176 @@ void MergeSort(SeqList *psl)
 }
 
 //QuickSort（快速排序）
-void QuickSort(SeqList *psl);
+//寻找基准值下标的方法
+//hoare法
+int GetIndexHoareWay(SeqList *psl, int left, int right)
+{
+	int a = left + 1;
+	int b = right - 2;
+	int mid = (left + right) / 2;
+	if (psl->_array[left] > psl->_array[mid])
+	{
+		Swap(&psl->_array[left], &psl->_array[mid]);
+	}
+	if (psl->_array[mid] > psl->_array[right])
+	{
+		Swap(&psl->_array[mid], &psl->_array[right]);
+	}
+	if (psl->_array[left] > psl->_array[mid])
+	{
+		Swap(&psl->_array[left], &psl->_array[mid]);
+	}
+	if (right - left <= 2)
+	{
+		return mid;
+	}
+	Swap(&psl->_array[mid], &psl->_array[right - 1]);
+	while (a <= b)
+	{
+		while (a < right - 1 && psl->_array[a] <= psl->_array[right - 1])
+		{
+			a++;
+		}
+
+		while (b > 1 && psl->_array[b] >= psl->_array[right - 1])
+		{
+			b--;
+		}
+
+		if (a == b && (a == 1 || a == right - 1))
+		{
+			break;
+		}
+
+		if (a < b)
+		{
+			Swap(&psl->_array[a], &psl->_array[b]);
+		}
+	}
+	Swap(&psl->_array[a], &psl->_array[right - 1]);
+	return a;
+}
+
+//双指针法1
+int GetIndexDoublePointWay1(SeqList *psl, int left, int right)
+{
+	int a = left;
+	int b = right;
+	int flag = 0;
+	while (psl->_array[b] > psl->_array[a])
+	{
+		b--;
+	}
+	while (a < b)
+	{
+		Swap(&psl->_array[a], &psl->_array[b]);
+		flag = !flag;
+		while (psl->_array[b] >= psl->_array[a])
+		{
+			flag ? a++ : b--;
+		}
+	}
+	return flag ? b : a;
+}
+
+//双指针法2
+int GetIndexDoublePointWay2(SeqList *psl, int left, int right)
+{
+	int a = left;
+	int b = right - 1;
+	int mid = (left + right) / 2;
+	Swap(&psl->_array[mid], &psl->_array[right]);
+	while (a <= b)
+	{
+		while (a < right && psl->_array[a] <= psl->_array[right])
+		{
+			a++;
+		}
+		while (b > 0 && psl->_array[b] >= psl->_array[right])
+		{
+			b--;
+		}
+		if ((a == b) && (a == 0 || a == right))
+		{
+			break;
+		}
+		if (a < b)
+		{
+			Swap(&psl->_array[a], &psl->_array[b]);
+		}
+	}
+	Swap(&psl->_array[a], &psl->_array[right]);
+	return a;
+}
+
+//挖坑法
+int GetIndexDigWay(SeqList *psl, int left, int right)
+{
+	SLDataType tmp;
+	tmp = psl->_array[left];
+	while (left < right)
+	{
+		while (psl->_array[right] >= tmp && left < right)
+		{
+			right--;
+		}
+		psl->_array[left] = psl->_array[right];
+		while (psl->_array[left] <= tmp && left < right)
+		{
+			left++;
+		}
+		psl->_array[right] = psl->_array[left];
+	}
+	psl->_array[left] = tmp;
+	return left;
+}
+
+void DealQuickSort(SeqList *psl, int left, int right)
+{
+	if (left >= right)
+	{
+		return;
+	}
+	int index = GetIndexHoareWay(psl, left, right);
+	DealQuickSort(psl, left, index - 1);
+	DealQuickSort(psl, index + 1, right);
+}
+
+void QuickSort(SeqList *psl)
+{
+	DealQuickSort(psl, 0, psl->_size - 1);
+}
+
+//快速排序非递归
+void QuickSortNonR(SeqList *psl)
+{
+	int left;
+	int right;
+	int index;
+	Queue queue;
+	QueueInit(&queue);
+	QueuePush(&queue, 0);
+	QueuePush(&queue, psl->_size - 1);
+	while (!QueueEmpty(&queue))
+	{
+		left = QueueFront(&queue);
+		QueuePop(&queue);
+		right = QueueFront(&queue);
+		QueuePop(&queue);
+		index = GetIndexDigWay(psl, left, right);
+		if (left < index - 1)
+		{
+			QueuePush(&queue, left);
+			QueuePush(&queue, index);
+		}
+		if (index + 1 < right)
+		{
+			QueuePush(&queue, index + 1);
+			QueuePush(&queue, right);
+		}
+	}
+	QueueDestory(&queue);
+}
 
 //HeapSort（堆排序）
 void HeapAdjustDown(SeqList *psl, int root)
