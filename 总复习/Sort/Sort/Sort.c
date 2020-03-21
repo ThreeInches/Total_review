@@ -373,8 +373,9 @@ void HeapSort(SeqList *psl)
 //CountSort£®º∆ ˝≈≈–Ú£©
 void CountSort(SeqList *psl)
 {
-	SeqList count;
-	SeqListInit(&count, 5000);
+	int index = 0;
+	SeqList tmp;
+	SeqListInit(&tmp, 5000);
 	int _max = psl->_array[0];
 	int _min = psl->_array[0];
 	for (int i = 0; i < psl->_size; i++)
@@ -388,29 +389,22 @@ void CountSort(SeqList *psl)
 			_min = psl->_array[i];
 		}
 	}
-	int _size = _max - _min + 1;
-	for (int i = 0; i < count._size; i++)
+	SeqList count;
+	SeqListInit(&count, _max - _min + 1);
+	for (int i = _min; i < _max; i++)
 	{
 		SeqListPushBack(&count, 0);
 	}
-	for (int i = 0; i < psl->_size; i++)
+	for (int i = _min; i < _max; i++)
 	{
 		count._array[psl->_array[i] - _min]++;
 	}
-	for (int i = 0; i < _size; i++)
+	for (int i = _min; i < _max; i++)
 	{
-		count._array[i] += count._array[i - 1];
-	}
-	SeqList tmp;
-	SeqListInit(&tmp, 5000);
-	for (int i = 0; i < tmp._size; i++)
-	{
-		SeqListPushBack(&tmp, 0);
-	}
-	for (int i = psl->_size - 1; i >= 0; i--)
-	{
-		count._array[psl->_array[i] - _min]--;
-		tmp._array[count._array[psl->_array[i] - _min]] = psl->_array[i];
+		for (int j = 0; j < count._array[i]; j++)
+		{
+			tmp._array[index++] = i;
+		}
 	}
 	for (int i = 0; i < psl->_size; i++)
 	{
@@ -423,21 +417,28 @@ void CountSort(SeqList *psl)
 //BucketSort£®Õ∞≈≈–Ú£©
 void BucketSort(SeqList *psl)
 {
-	int bucket[5000];
-	for (int i = 0; i < 5000; i++)
-	{
-		bucket[i] = 0;
-	}
+	int index = 0;
+	SeqList tmp;
+	SeqListInit(&tmp, 5000);
+	int _max = psl->_array[0];
+	int _min = psl->_array[0];
 	for (int i = 0; i < psl->_size; i++)
 	{
-		bucket[psl->_array[i]]++;
-	}
-	for (int i = 0; i <psl->_size; i++)
-	{
-		for (int j = 0; j < i; j++)
+		if (psl->_array[i]>_max)
 		{
-			psl->_array[i] = bucket[i];
+			_max = psl->_array[i];
 		}
+		if (psl->_array[i] < _min)
+		{
+			_min = psl->_array[i];
+		}
+	}
+	int BucketNum = ((_max - _min) / psl->_size) + 1;
+	SeqList bucket;
+	SeqListInit(&bucket, ((BucketNum) * (_max - _min) + 2));
+	for (int i = 0; i < psl->_size; i++)
+	{
+
 	}
 }
 
@@ -463,7 +464,7 @@ void RadixCountSort(SeqList *psl, int exp)
 	SeqListInit(&bucket, 10);
 	for (int i = 0; i < psl->_size; i++)
 	{
-		bucket._array[(psl->_array[i] / exp) % 10]++;
+		bucket._array[(psl->_array[i] / 10) % exp]++;
 	}
 	for (int i = 0; i < 10; i++)
 	{

@@ -68,6 +68,7 @@
     <ClCompile Include="Queue.c" />
     <ClCompile Include="SeqList.c" />
     <ClCompile Include="Sort.c" />
+    <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Queue.h" />
