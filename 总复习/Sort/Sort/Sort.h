@@ -48,6 +48,7 @@ void CountSort(SeqList *psl);
 //BucketSort£¨Í°ÅÅĞò£©
 void BucketSort(SeqList *psl);
 //RadixSort£¨»ùÊıÅÅĞò£©
+int GetDigit(SeqList *psl);
 void RadixSort(SeqList *psl);
 
 #endif //_SORT_H_

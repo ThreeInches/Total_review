@@ -433,62 +433,81 @@ void BucketSort(SeqList *psl)
 			_min = psl->_array[i];
 		}
 	}
-	int BucketNum = ((_max - _min) / psl->_size) + 1;
-	SeqList bucket;
-	SeqListInit(&bucket, ((BucketNum) * (_max - _min) + 2));
-	for (int i = 0; i < psl->_size; i++)
+	SeqList count;
+	SeqListInit(&count, _max - _min + 1);
+	for (int i = _min; i < _max; i++)
 	{
-
+		SeqListPushBack(&count, 0);
 	}
-}
-
-//RadixSort（基数排序）
-int GetMax(SeqList *psl)
-{
-	int _max = psl->_array[0];
-	for (int i = 0; i < psl->_size; i++)
+	for (int i = _min; i < _max; i++)
 	{
-		if (_max < psl->_array[i])
+		count._array[psl->_array[i] - _min]++;
+	}
+	for (int i = _min; i < _max; i++)
+	{
+		for (int j = 0; j < count._array[i]; j++)
 		{
-			_max = psl->_array[i];
+			tmp._array[index++] = i;
 		}
-	}
-	return _max;
-}
-
-void RadixCountSort(SeqList *psl, int exp)
-{
-	SeqList tmp;
-	SeqList bucket;
-	SeqListInit(&tmp, 5000);
-	SeqListInit(&bucket, 10);
-	for (int i = 0; i < psl->_size; i++)
-	{
-		bucket._array[(psl->_array[i] / 10) % exp]++;
-	}
-	for (int i = 0; i < 10; i++)
-	{
-		bucket._array[i] += bucket._array[i - 1];
-	}
-	for (int i = psl->_size - 1; i >= 0; i--)
-	{
-		tmp._array[bucket._array[(psl->_array[i] / exp) % 10] - 1] = psl->_array[i];
-		bucket._array[(psl->_array[i] / exp) % 10]--;
 	}
 	for (int i = 0; i < psl->_size; i++)
 	{
 		psl->_array[i] = tmp._array[i];
 	}
+	SeqListDestory(&count);
 	SeqListDestory(&tmp);
-	SeqListDestory(&bucket);
+}
+
+//RadixSort（基数排序）
+int GetDigit(SeqList *psl)
+{
+	int _digit = 1;
+	int base = 10;
+	for (int i = 0; i < psl->_size; i++)
+	{
+		while (psl->_array[i] >= base)
+		{
+			_digit++;
+			base *= 10;
+		}
+	}
+	return _digit;
 }
 
 void RadixSort(SeqList *psl)
 {
-	int exp;
-	int _max = GetMax(psl);
-	for (int exp = 1; _max / exp > 0; exp *= 10)
+	int index;
+	int _digit = GetDigit(psl);
+	int base = 1;
+	SeqList tmp;
+	SeqListInit(&tmp, 5000);
+	SeqList count;
+	SeqListInit(&count, 10);
+	for (int i = 0; i < 10; i++)
 	{
-		RadixCountSort(psl, exp);
+		SeqListPushBack(&count, 0);
+	}
+	for (int i = 0; i < _digit; i++)
+	{
+		for (int j = 0; j < psl->_size; j++)
+		{
+			index = (psl->_array[j] / base) % 10;
+			count._array[index]++;
+		}
+		for (int j = 0; j < 10; j++)
+		{
+			count._array[j] += count._array[j - 1];
+		}
+		for (int j = psl->_array - 1; j >= 0; j--)
+		{
+			index = (psl->_array[j] / base) % 10;
+			tmp._array[count._array[index] - 1] = psl->_array[j];
+			count._array[index]--;
+		}
+		for (int j = 0; j < psl->_size; j++)
+		{
+			psl->_array[j] = tmp._array[j];
+		}
+		base *= 10;
 	}
 }
