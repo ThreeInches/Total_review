@@ -33,5 +33,26 @@
     <ClCompile Include="6引用.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="7作为参数传值和传引用.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="8作为返回值传值和传引用.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="9引用和指针的区别.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="10内联函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11auto关键字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12范围for.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="13指针空值nullptr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

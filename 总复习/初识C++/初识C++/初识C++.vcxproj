@@ -64,12 +64,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10内联函数.cpp" />
+    <ClCompile Include="11auto关键字.cpp" />
+    <ClCompile Include="13指针空值nullptr.cpp" />
     <ClCompile Include="1C++输入输出.cpp" />
     <ClCompile Include="2命名空间.cpp" />
     <ClCompile Include="3缺省参数.cpp" />
     <ClCompile Include="4函数重载.cpp" />
     <ClCompile Include="5extern _C_.cpp" />
     <ClCompile Include="6引用.cpp" />
+    <ClCompile Include="7作为参数传值和传引用.cpp" />
+    <ClCompile Include="8作为返回值传值和传引用.cpp" />
+    <ClCompile Include="9引用和指针的区别.cpp" />
+    <ClCompile Include="12范围for.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
