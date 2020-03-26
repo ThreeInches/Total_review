@@ -66,6 +66,11 @@
   <ItemGroup>
     <ClCompile Include="1类的引入.cpp" />
     <ClCompile Include="2类的定义.cpp" />
+    <ClCompile Include="3类的作用域.cpp" />
+    <ClCompile Include="4类的实例化.cpp" />
+    <ClCompile Include="5类的大小.cpp" />
+    <ClCompile Include="6this指针.cpp" />
+    <ClCompile Include="7this指针.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
