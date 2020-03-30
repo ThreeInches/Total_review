@@ -15,25 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1再谈构造函数.cpp">
+    <ClCompile Include="1C语言动态内存管理方式.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="2explicit关键字.cpp">
+    <ClCompile Include="2C++动态内存管理方式.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="3static成员.cpp">
+    <ClCompile Include="3new和delete操作自定义类型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="4C++11初识化的新方法.cpp">
+    <ClCompile Include="4new和delete重载.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="5友元函数.cpp">
+    <ClCompile Include="5operator_new和operator_delete的类的专属重载.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="6友元类.cpp">
+    <ClCompile Include="6new和delete的实现原理.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="7内部类.cpp">
+    <ClCompile Include="7定位new表达式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="8设计只在堆上创建对象的类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="9设计只在栈上创建对象的类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
