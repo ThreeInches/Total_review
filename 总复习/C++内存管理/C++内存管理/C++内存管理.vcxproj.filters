@@ -42,5 +42,8 @@
     <ClCompile Include="9设计只在栈上创建对象的类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="10内存泄漏.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

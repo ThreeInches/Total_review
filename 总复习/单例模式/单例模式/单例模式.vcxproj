@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{946E890E-AB48-4A19-9903-538886603CC0}</ProjectGuid>
-    <RootNamespace>C内存管理</RootNamespace>
+    <ProjectGuid>{F91B40B4-969B-4C2C-8B73-15921EA4081A}</ProjectGuid>
+    <RootNamespace>单例模式</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,16 +64,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="10内存泄漏.cpp" />
-    <ClCompile Include="2C++动态内存管理方式.cpp" />
-    <ClCompile Include="1C语言动态内存管理方式.cpp" />
-    <ClCompile Include="3new和delete操作自定义类型.cpp" />
-    <ClCompile Include="4new和delete重载.cpp" />
-    <ClCompile Include="5operator_new和operator_delete的类的专属重载.cpp" />
-    <ClCompile Include="6new和delete的实现原理.cpp" />
-    <ClCompile Include="7定位new表达式.cpp" />
-    <ClCompile Include="8设计只在堆上创建对象的类.cpp" />
-    <ClCompile Include="9设计只在栈上创建对象的类.cpp" />
+    <ClCompile Include="1饿汉模式.cpp" />
+    <ClCompile Include="2懒汉模式.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
