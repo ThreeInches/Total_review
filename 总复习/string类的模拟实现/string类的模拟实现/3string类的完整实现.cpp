@@ -1,37 +1,34 @@
 #include "String.h"
 //#include <string>
 
+void TestString()
+{
+	String s1("Hell");
+	s1.PushBack('o');
+	s1 += ',';
+	s1 += "World!";
+
+	cout << s1 << endl;
+	cout << s1.Size() << endl;
+	cout << s1.Capacity() << endl;
+
+	String::iterator it = s1.begin();
+	for (; it != s1.end(); it++)
+	{
+		cout << *it << ' ';
+	}
+	cout << endl;
+
+	for (auto& ch : s1)
+	{
+		cout << ch << ' ';
+	}
+	cout << endl;
+}
+
 int main()
 {
-	//String s1("caixukun");
-
-	//String::iterator is;
-	//for (is = s1.begin(); is != s1.end(); is++)
-	//{
-	//cout << *is;
-	//}
-
-	//cout << endl;
-
-	//for (auto & i : s1)
-	//{
-	//	cout << i;
-	//}
-
-
-	String s1("n");
-	String s2("byte");
-	String s3 = s2;
-	String s4("qiaobiluo");
-	cout << s4.Size() << endl;
-	//cout << s4.Capacity() << endl;
-	//s4.Resize(16);
-	//cout << s4.Size() << endl;
-	//cout << s4.Capacity() << endl;
-
-	//cout << (s4 > s1) << endl;
-	//cout << (s4 < "666") << endl;
-	//cout << ("666" == s4) << endl;
+	TestString();
 	system("pause");
 	return 0;
 }

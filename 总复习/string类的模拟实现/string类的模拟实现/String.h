@@ -152,39 +152,39 @@ public:
 		}
 	}
 
-	String& operator+=(const char* str)
+	String& operator+=(const char str)
 	{
 		size_t tmp = m_size;
-		m_size += strlen(str);
+		m_size += strlen(&str);
 		Reserve(m_size);
-		strcpy(m_str + tmp, str);
+		strcpy(m_str + tmp, &str);
 		return *this;
 	}
 
-	String& operator+=(const String* s)
+	String& operator+=(const String& s)
 	{
 		size_t tmp = m_size;
-		m_size += s->m_size;
+		m_size += s.m_size;
 		Reserve(m_size);
-		strcpy(m_str + tmp, s->m_str);
+		strcpy(m_str + tmp, s.m_str);
 		return *this;
 	}
 
-	String& Append(const char* str, size_t n)
+	String& Append(const char str, size_t n)
 	{
 		size_t tmp = m_size;
 		m_size += n;
 		Reserve(m_size);
-		strncpy(m_str + tmp, str, n);
+		strncpy(m_str + tmp, &str, n);
 		return *this;
 	}
 
-	String& Append(const String* s)
+	String& Append(const String& s)
 	{
 		size_t tmp = m_size;
-		m_size += s->m_size;
+		m_size += s.m_size;
 		Reserve(m_size);
-		strcpy(m_str + tmp, s->m_str);
+		strcpy(m_str + tmp, s.m_str);
 		return *this;
 	}
 
@@ -210,14 +210,14 @@ public:
 		return -1;
 	}
 
-	size_t find(const char* str, int pos, int n)
+	size_t find(const char str, int pos, int n)
 	{
 		if (pos <= 0 || pos >= n)
 		{
 			return -1;
 		}
 
-		char* tmp = strstr(m_str + pos, str);
+		char* tmp = strstr(m_str + pos, &str);
 
 		if (tmp)
 		{
@@ -227,14 +227,14 @@ public:
 		return -1;
 	}
 
-	size_t find(const String* str, int pos = 0)
+	size_t find(const String& str, int pos = 0)
 	{
 		if (pos <= 0 || pos >= m_size)
 		{
 			return -1;
 		}
 
-		char* tmp = strstr(m_str + pos, str->m_str);
+		char* tmp = strstr(m_str + pos, str.m_str);
 
 		if (tmp)
 		{
@@ -262,7 +262,7 @@ public:
 		return -1;
 	}
 
-	size_t rfind(const char* str, int pos, int n)
+	size_t rfind(const char str, int pos, int n)
 	{
 		if (pos <= 0 || pos >= n)
 		{
@@ -270,7 +270,7 @@ public:
 		}
 
 		Reverse(0, m_size - 1);
-		char* tmp = strstr(m_str + pos, str);
+		char* tmp = strstr(m_str + pos, &str);
 
 		if (tmp)
 		{
@@ -280,7 +280,7 @@ public:
 		return -1;
 	}
 
-	size_t rfind(const String* str, int pos = 0)
+	size_t rfind(const String& s, int pos = 0)
 	{
 		if (pos <= 0 || pos >= m_size)
 		{
@@ -288,7 +288,7 @@ public:
 		}
 
 		Reverse(0, m_size - 1);
-		char* tmp = strstr(m_str + pos, str->m_str);
+		char* tmp = strstr(m_str + pos, s.m_str);
 
 		if (tmp)
 		{
