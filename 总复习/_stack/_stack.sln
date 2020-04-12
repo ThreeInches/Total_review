@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_stack", "_stack\_stack.vcxproj", "{E4A10458-386F-4528-8024-2650880810E0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack的模拟实现", "stack的模拟实现\stack的模拟实现.vcxproj", "{72C0EF7F-9EDC-421D-8A6A-98506191630E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{E4A10458-386F-4528-8024-2650880810E0}.Debug|Win32.Build.0 = Debug|Win32
 		{E4A10458-386F-4528-8024-2650880810E0}.Release|Win32.ActiveCfg = Release|Win32
 		{E4A10458-386F-4528-8024-2650880810E0}.Release|Win32.Build.0 = Release|Win32
+		{72C0EF7F-9EDC-421D-8A6A-98506191630E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72C0EF7F-9EDC-421D-8A6A-98506191630E}.Debug|Win32.Build.0 = Debug|Win32
+		{72C0EF7F-9EDC-421D-8A6A-98506191630E}.Release|Win32.ActiveCfg = Release|Win32
+		{72C0EF7F-9EDC-421D-8A6A-98506191630E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
