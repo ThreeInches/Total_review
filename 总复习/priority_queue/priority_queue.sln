@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "priority_queue", "priority_queue\priority_queue.vcxproj", "{B5B86069-67E6-4BA1-A32B-32D136F313CF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "priority_queue的模拟实现", "priority_queue的模拟实现\priority_queue的模拟实现.vcxproj", "{4D36FC29-E302-4C7D-9B15-9C24895707A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{B5B86069-67E6-4BA1-A32B-32D136F313CF}.Debug|Win32.Build.0 = Debug|Win32
 		{B5B86069-67E6-4BA1-A32B-32D136F313CF}.Release|Win32.ActiveCfg = Release|Win32
 		{B5B86069-67E6-4BA1-A32B-32D136F313CF}.Release|Win32.Build.0 = Release|Win32
+		{4D36FC29-E302-4C7D-9B15-9C24895707A5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D36FC29-E302-4C7D-9B15-9C24895707A5}.Debug|Win32.Build.0 = Debug|Win32
+		{4D36FC29-E302-4C7D-9B15-9C24895707A5}.Release|Win32.ActiveCfg = Release|Win32
+		{4D36FC29-E302-4C7D-9B15-9C24895707A5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
