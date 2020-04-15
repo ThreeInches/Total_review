@@ -33,5 +33,16 @@
     <ClCompile Include="6类型萃取.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="7类型萃取.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="8模板的分离编译.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="a.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
