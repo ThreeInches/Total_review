@@ -66,6 +66,11 @@
   <ItemGroup>
     <ClCompile Include="1继承的概念.cpp" />
     <ClCompile Include="2继承的定义和继承的访问限定符.cpp" />
+    <ClCompile Include="3基类和派生类对象赋值转换.cpp" />
+    <ClCompile Include="4继承中的作用域.cpp" />
+    <ClCompile Include="5派生类的默认成员函数.cpp" />
+    <ClCompile Include="6实现一个不能被继承的类.cpp" />
+    <ClCompile Include="7继承与友元.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
