@@ -36,5 +36,14 @@
     <ClCompile Include="7继承与友元.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="8菱形继承.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="9虚拟继承.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="10虚拟继承的成员模型.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
