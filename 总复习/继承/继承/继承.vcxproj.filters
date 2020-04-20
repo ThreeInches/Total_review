@@ -45,5 +45,8 @@
     <ClCompile Include="10虚拟继承的成员模型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="11组合.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
