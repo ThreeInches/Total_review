@@ -14,4 +14,30 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1多态的构成条件.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2虚函数的重写.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="3协变.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="4析构函数的重写.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="5final关键字.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6override.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="7抽象类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="8虚函数表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

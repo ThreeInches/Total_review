@@ -64,6 +64,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1多态的构成条件.cpp" />
+    <ClCompile Include="2虚函数的重写.cpp" />
+    <ClCompile Include="3协变.cpp" />
+    <ClCompile Include="4析构函数的重写.cpp" />
+    <ClCompile Include="5final关键字.cpp" />
+    <ClCompile Include="6override.cpp" />
+    <ClCompile Include="7抽象类.cpp" />
+    <ClCompile Include="8虚函数表.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
