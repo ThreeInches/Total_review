@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="10虚拟继承的成员模型.cpp" />
     <ClCompile Include="11组合.cpp" />
+    <ClCompile Include="12继承和静态成员.cpp" />
     <ClCompile Include="1继承的概念.cpp" />
     <ClCompile Include="2继承的定义和继承的访问限定符.cpp" />
     <ClCompile Include="3基类和派生类对象赋值转换.cpp" />
