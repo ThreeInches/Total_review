@@ -39,5 +39,8 @@
     <ClCompile Include="8虚函数表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="9多态原理.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

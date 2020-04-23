@@ -72,6 +72,7 @@
     <ClCompile Include="6override.cpp" />
     <ClCompile Include="7抽象类.cpp" />
     <ClCompile Include="8虚函数表.cpp" />
+    <ClCompile Include="9多态原理.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
