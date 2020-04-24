@@ -64,6 +64,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10单继承中的虚函数表.cpp" />
+    <ClCompile Include="11多继承中的虚函数表.cpp" />
     <ClCompile Include="1多态的构成条件.cpp" />
     <ClCompile Include="2虚函数的重写.cpp" />
     <ClCompile Include="3协变.cpp" />

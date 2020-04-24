@@ -42,5 +42,11 @@
     <ClCompile Include="9多态原理.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="10单继承中的虚函数表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="11多继承中的虚函数表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
