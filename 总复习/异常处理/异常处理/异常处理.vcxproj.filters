@@ -24,5 +24,14 @@
     <ClCompile Include="3异常的重新抛出.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="4自定义异常体系.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="5C++标准库的异常体系.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6异常的优缺点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

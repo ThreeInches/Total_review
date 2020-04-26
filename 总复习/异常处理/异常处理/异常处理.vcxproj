@@ -67,6 +67,9 @@
     <ClCompile Include="1异常的概念.cpp" />
     <ClCompile Include="2异常的抛出和捕获.cpp" />
     <ClCompile Include="3异常的重新抛出.cpp" />
+    <ClCompile Include="4自定义异常体系.cpp" />
+    <ClCompile Include="5C++标准库的异常体系.cpp" />
+    <ClCompile Include="6异常的优缺点.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
