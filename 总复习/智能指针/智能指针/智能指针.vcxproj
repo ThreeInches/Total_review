@@ -66,6 +66,12 @@
   <ItemGroup>
     <ClCompile Include="1RAII.cpp" />
     <ClCompile Include="2智能指针原理.cpp" />
+    <ClCompile Include="3auto_ptr.cpp" />
+    <ClCompile Include="4auto_ptr的原理.cpp" />
+    <ClCompile Include="5unique_ptr.cpp" />
+    <ClCompile Include="6unique_ptr的原理.cpp" />
+    <ClCompile Include="7shared_ptr.cpp" />
+    <ClCompile Include="8shared_ptr的原理.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
