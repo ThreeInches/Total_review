@@ -64,6 +64,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="10shared_ptr的循环引用.cpp" />
+    <ClCompile Include="11循环引用的解决.cpp" />
+    <ClCompile Include="12非new对象的shared_ptr的管理.cpp" />
+    <ClCompile Include="13用RAII技术设计守卫锁.cpp" />
     <ClCompile Include="1RAII.cpp" />
     <ClCompile Include="2智能指针原理.cpp" />
     <ClCompile Include="3auto_ptr.cpp" />
@@ -72,6 +76,7 @@
     <ClCompile Include="6unique_ptr的原理.cpp" />
     <ClCompile Include="7shared_ptr.cpp" />
     <ClCompile Include="8shared_ptr的原理.cpp" />
+    <ClCompile Include="9shared_ptr的线程安全.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
