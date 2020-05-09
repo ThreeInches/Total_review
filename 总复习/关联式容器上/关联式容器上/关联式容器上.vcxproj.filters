@@ -30,5 +30,8 @@
     <ClCompile Include="5multiset.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="6二叉搜索树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
