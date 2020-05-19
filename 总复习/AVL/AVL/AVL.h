@@ -230,7 +230,14 @@ public:
 			return true;
 		}
 
-
+		if ((m_IsBalance(root->m_left)) && (m_IsBalance(root->m_right)) && (abs(Height(root->m_left) - Height(root->m_right)) <= 1))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	bool IsBalance()
