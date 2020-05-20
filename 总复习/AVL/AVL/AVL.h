@@ -62,7 +62,7 @@ public:
 			}
 			else
 			{
-				return make_pair(cur, false>);
+				return make_pair(cur, false);
 			}
 		}
 
@@ -199,14 +199,60 @@ public:
 
 	void RotateLR(Node* parent)
 	{
+		Node* subL = parent->m_left;
+		Node* subLR = subL->m_right;
+		int bf = subLR->m_bf;
+
 		RotateL(parent->m_left);
 		RotateR(parent);
+
+		if (bf = 1)
+		{
+			subLR->m_bf = 0;
+			parent->m_bf = 0;
+			subL->m_bf = -1;
+		}
+		else if (bf = -1)
+		{
+			subLR->m_bf = 0;
+			parent->m_bf = 1;
+			subL->m_bf = 0;
+		}
+		else if (bf = 0)
+		{
+			subLR->m_bf = 0;
+			parent->m_bf = 0;
+			subL->m_bf = 0;
+		}
 	}
 
 	void RotateRL(Node* parent)
 	{
+		Node* subR = parent->m_right;
+		Node* subRL = subL->m_left;
+		int bf = subRL->m_bf;
+
 		RotateR(parent->m_right);
 		RotateL(parent);
+
+		if (bf = 1)
+		{
+			subRL->m_bf = 0;
+			parent->m_bf = -1;
+			subR->m_bf = 0; 
+		}
+		else if (bf = -1)
+		{
+			subRL->m_bf = 0;
+			parent->m_bf = 0;
+			subR->m_bf = 1;
+		}
+		else if (bf = 0)
+		{
+			subRL->m_bf = 0;
+			parent->m_bf = 0;
+			subR->m_bf = 0;
+		}
 	}
 
 	int Height(Node* root)
