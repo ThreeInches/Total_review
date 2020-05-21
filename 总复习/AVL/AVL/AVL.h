@@ -26,11 +26,11 @@ class AVLTree
 {
 	typedef AVLTreeNode<K, V> Node;
 public:
-	AVLTree()
-		:m_root(nullptr)
-	{
+	//AVLTree()
+	//	:m_root(nullptr)
+	//{
 
-	}
+	//}
 
 	V& operator [] (const K& key)
 	{
@@ -66,7 +66,8 @@ public:
 			}
 		}
 
-		cur = new Node(kv);
+		Node* newNode = new Node(kv);
+		cur = newNode;
 		if (parent->m_kv.first < m_kv.first)
 		{
 			parent->m_right = cur;
@@ -119,7 +120,7 @@ public:
 			}
 		}
 
-		return make_pair(cur, true);
+		return make_pair(newNode, true);
 	}
 
 	void RotateR(Node* parent)
@@ -276,7 +277,7 @@ public:
 			return true;
 		}
 
-		if ((m_IsBalance(root->m_left)) && (m_IsBalance(root->m_right)) && (abs(Height(root->m_left) - Height(root->m_right)) <= 1))
+		if ((m_IsBalance(root->m_left)) && (m_IsBalance(root->m_right)) && (abs(Height(root->m_left) - Height(root->m_right)) < 2))
 		{
 			return true;
 		}
