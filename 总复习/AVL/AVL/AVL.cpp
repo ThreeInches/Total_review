@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 #include "AVL.h"
 
 int main()
@@ -16,7 +12,7 @@ int main()
 	avl[5] = 5.5;
 	avl[6] = 6.6;
 
-	cout << avl.IsBalance() << endl;
+	//cout << avl.IsBalance() << endl;
 
 	system("pause");
 	return 0;

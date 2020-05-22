@@ -1,3 +1,10 @@
+#pragma once
+
+#include <iostream>
+#include <algorithm>
+#include <assert.h>
+using namespace std;
+
 template<class K, class V>
 class AVLTreeNode
 {
@@ -26,11 +33,26 @@ class AVLTree
 {
 	typedef AVLTreeNode<K, V> Node;
 public:
-	//AVLTree()
-	//	:m_root(nullptr)
-	//{
+	AVLTree()
+		:m_root(nullptr)
+	{
 
-	//}
+	}
+
+	~AVLTree()
+	{
+		destory(m_root);
+	}
+
+	void destory(Node* root)
+	{
+		if (root)
+		{
+			destory(root->m_left);
+			destory(root->m_right);
+			delete root;
+		}
+	}
 
 	V& operator [] (const K& key)
 	{
@@ -50,12 +72,12 @@ public:
 		Node* parent = nullptr;
 		while (cur)
 		{
-			if (cur->m_kv.first < m_kv.first)
+			if (cur->m_kv.first < kv.first)
 			{
 				parent = cur;
 				cur = cur->m_right;
 			}
-			else if (cur->m_kv.first > m_kv.first)
+			else if (cur->m_kv.first > kv.first)
 			{
 				parent = cur;
 				cur = cur->m_left;
@@ -68,7 +90,7 @@ public:
 
 		Node* newNode = new Node(kv);
 		cur = newNode;
-		if (parent->m_kv.first < m_kv.first)
+		if (parent->m_kv.first < kv.first)
 		{
 			parent->m_right = cur;
 			cur->m_parent = parent;
@@ -116,6 +138,10 @@ public:
 				else if ((parent->m_bf = 2) && (cur->m_bf = -1))
 				{
 					RotateRL(parent);
+				}
+				else
+				{
+					assert(parent);
 				}
 			}
 		}
@@ -230,7 +256,7 @@ public:
 	void RotateRL(Node* parent)
 	{
 		Node* subR = parent->m_right;
-		Node* subRL = subL->m_left;
+		Node* subRL = subR->m_left;
 		int bf = subRL->m_bf;
 
 		RotateR(parent->m_right);
