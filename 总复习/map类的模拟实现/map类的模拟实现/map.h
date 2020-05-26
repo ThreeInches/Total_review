@@ -5,13 +5,7 @@ namespace gwp
 {
 	template<class K, class V>
 	class map
-	{
-	public:
-		void insert(const pair<K, V>& kv)
-		{
-			m_t.Insert(kv);
-		}
-	private:
+	{public:
 		class MapKeyOfValue
 		{
 		public:
@@ -21,6 +15,38 @@ namespace gwp
 			}
 		};
 
+		typedef typename RBTree<K, pair<K, V>, MapKeyOfValue>::Iterator Iterator;
+	public:
+		pair<Iterator, bool> insert(const pair<K, V>& kv)
+		{
+			return m_t.Insert(kv);
+		}
+
+		Iterator begin()
+		{
+			return m_t.begin();
+		}
+
+		Iterator end()
+		{
+			return m_t.end();
+		}
+
+		Iterator rbegin()
+		{
+			return m_t.rbegin();
+		}
+
+		Iterator rend()
+		{
+			return m_t.rend();
+		}
+
+		void inorder()
+		{
+			m_t.InOrder();
+		}
+	private:
 		RBTree<K, pair<K, V>, MapKeyOfValue> m_t;
 	};
 }
