@@ -70,6 +70,7 @@
     <ClCompile Include="4set.cpp" />
     <ClCompile Include="5multiset.cpp" />
     <ClCompile Include="6二叉搜索树.cpp" />
+    <ClCompile Include="7.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
