@@ -66,6 +66,9 @@
   <ItemGroup>
     <ClCompile Include="1哈希概念.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hash_table.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
