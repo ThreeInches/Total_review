@@ -18,6 +18,12 @@
     <ClCompile Include="1哈希概念.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2线性探测.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2线性探测的实现.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hash_table.h">
