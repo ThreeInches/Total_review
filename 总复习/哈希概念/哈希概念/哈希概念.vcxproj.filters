@@ -27,12 +27,18 @@
     <ClCompile Include="3除留余数法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="4开散列的实现.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hash_table.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="3除留余数法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="4开散列的实现.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
