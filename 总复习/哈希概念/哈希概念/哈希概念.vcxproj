@@ -69,10 +69,12 @@
     <ClCompile Include="2线性探测的实现.cpp" />
     <ClCompile Include="3除留余数法.cpp" />
     <ClCompile Include="4开散列的实现.cpp" />
+    <ClCompile Include="5开散列.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3除留余数法.h" />
     <ClInclude Include="4开散列的实现.h" />
+    <ClInclude Include="5开散列增容.h" />
     <ClInclude Include="hash_table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
