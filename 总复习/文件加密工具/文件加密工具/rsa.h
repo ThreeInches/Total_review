@@ -1,6 +1,13 @@
 #pragma once
+#include <iostream>
+#include <algorithm>
+#include <fstream>
+#include <time.h>
+
+using namespace std;
 
 typedef long DataType;
+#define NUM 256
 
 struct Key
 {
@@ -19,6 +26,13 @@ struct Key
 class rsa
 {
 public:
+
+	rsa();
+	//文件加密
+	void ecrept(const char* filename, const char* fileout);
+	//文件解密
+	void dcrept(const char* filename, const char* fileout);
+
 	//1、随机产生两个素数p，q
 	DataType getPrime();
 	//判断一个数是否是素数
