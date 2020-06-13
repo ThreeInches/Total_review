@@ -1,5 +1,53 @@
 #include "BigNum.h"
 
+BigNum::BigNum(const string& num)
+	:m_number(num)
+{
+
+}
+
+BigNum BigNum::operator + (BigNum& bi)
+{
+	string res = add(m_number, bi.m_number);
+	return BigNum(res);
+}
+
+BigNum BigNum::operator - (BigNum& bi)
+{
+	string res = sub(m_number, bi.m_number);
+	return BigNum(res);
+}
+
+BigNum BigNum::operator * (BigNum& bi)
+{
+	string res = mul(m_number, bi.m_number);
+	return BigNum(res);
+}
+
+BigNum BigNum::operator / (BigNum& bi)
+{
+	pair<string, string> res = dev(m_number, bi.m_number);
+	return BigNum(res.first);
+}
+
+BigNum BigNum::operator % (BigNum& bi)
+{
+	pair<string, string> res = dev(m_number, bi.m_number);
+	return BigNum(res.second);
+}
+
+ostream& operator << (ostream& _cout, BigNum& bi)
+{
+	_cout << bi.m_number << endl;
+	return _cout;
+}
+
+istream& operator >> (istream& _cin, BigNum& bi)
+{
+	_cin >> bi.m_number;
+	return _cin;
+}
+
 //加法
 string BigNum::add(string num1, string num2)
 {
@@ -138,9 +186,58 @@ string BigNum::mul(string num1, string num2)
 
 	return res;
 }
-//
-////除法
-//pair<string, string> BigNum::dev(string num1, string num2)
-//{
-//
-//}
+
+//除法（借助减法实现）
+pair<string, string> BigNum::dev(string num1, string num2)
+{
+	//商
+	string res;
+	//余数
+	string rem = num1;
+
+	//给除数进行放大，按照10的倍数放大
+	int difNum = num1.size() - num2.size();
+	num2.append(difNum, '0');
+	for (int i = 0; i < difNum + 1; i++)
+	{
+		//记录执行减的次数
+		char count = '0';
+		while (1)
+		{
+			if (less(rem, num2))
+			{
+				break;
+			}
+			rem = sub(rem, num2);
+			count++;
+		}
+		res += count;
+
+		//给除数减少十倍
+		num2.pop_back();
+	}
+
+	//删除前置'0'
+	while ((res.size() > 1) && (res[0] == '0'))
+	{
+		res.erase(0, 1);
+	}
+
+	return make_pair(res, rem);
+}
+
+bool BigNum::less(string num1, string num2)
+{
+	if (num1.size() < num2.size())
+	{
+		return true;
+	}
+	else if (num1.size() > num2.size())
+	{
+		return false;
+	}
+	else
+	{
+		return num1 < num2;
+	}
+}

@@ -62,7 +62,7 @@ void rsa::dcrept(const char* filename, const char* fileout)
 		num /= sizeof(DataType);
 		for (int i = 0; i < num; i++)
 		{
-			bufferOut[i] = decryption(buffer[i], m_Key.m_Dkey, m_Key.m_NKey);
+			bufferOut[i] = (char)decryption(buffer[i], m_Key.m_Dkey, m_Key.m_NKey);
 		}
 
 		fout.write(bufferOut, num);
@@ -78,12 +78,16 @@ void rsa::dcrept(const char* filename, const char* fileout)
 //1、随机产生两个素数p，q
 DataType rsa::getPrime()
 {
-	srand(time(nullptr));
+	//srand(time(nullptr));
+	cout << "1、随机产生两个素数p，q" << endl;
+	boost::random::mt19937 gen(time(nullptr));
+	boost::random::uniform_int_distribution<DataType> dist(0, DataType(1) << 256);
+
 	DataType prime;
 	while (1)
 	{
-		prime = rand() % 100 + 2;
-		if (isPrime(prime))
+		prime = dist(gen);
+		if (isPrimeBigNum(prime))
 		{
 			break;
 		}
@@ -111,27 +115,50 @@ bool rsa::isPrime(DataType data)
 	return true;
 }
 
+//大数素性检测
+bool rsa::isPrimeBigNum(DataType data)
+{
+	//cout << "大数素性检测" << endl;
+	boost::random::mt19937 gen(time(nullptr));
+
+	if (miller_rabin_test(data, 25, gen))
+	{
+		if (miller_rabin_test((data - 1) / 2, 25, gen))
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
 //2、计算n 其中n = p * q
 DataType rsa::getNkey(DataType prime1, DataType prime2)
 {
+	cout << "2、计算n 其中n = p * q" << endl;
 	return prime1 * prime2;
 }
 
 //3、求n的欧拉函数，计算f(n) = f(p) * f(q) = (p - 1)*(q - 1)
 DataType rsa::getOrla(DataType prime1, DataType prime2)
 {
+	cout << "3、求n的欧拉函数，计算f(n) = f(p) * f(q) = (p - 1)*(q - 1)" << endl;
 	return (prime1 - 1) * (prime2 - 1);
 }
 
 //4、求EKey随机取e  1 < e < f(n) 且e 与 f(n)互质
 DataType rsa::getEKey(DataType orla)
 {
-	srand(time(nullptr));
+	cout << "4、求EKey随机取e  1 < e < f(n) 且e 与 f(n)互质" << endl;
+	//srand(time(nullptr));
+	boost::random::mt19937 gen(time(nullptr));
+	boost::random::uniform_int_distribution<DataType> dist(2, orla);
+
 	DataType EKey;
 	while (1)
 	{
-		EKey = rand() % orla;
-		if (EKey > 1 && getCommonDivisor(EKey, orla) == 1)
+		EKey = dist(gen);
+		if (getCommonDivisor(EKey, orla) == 1)
 		{
 			return EKey;
 		}
@@ -141,6 +168,7 @@ DataType rsa::getEKey(DataType orla)
 //5、求DKey计算e对于f(n)的模反元素d (d * e) % f(n) = 1
 DataType rsa::getDKey(DataType EKey, DataType orla)
 {
+	cout << "5、求DKey计算e对于f(n)的模反元素d (d * e) % f(n) = 1" << endl;
 	DataType DKey;
 	DKey = orla / EKey;
 	while (1)

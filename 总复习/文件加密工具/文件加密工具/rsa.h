@@ -1,12 +1,17 @@
 #pragma once
+#define BOOST_NO_CXX11_VARIADIC_TEMPLATES
 #include <iostream>
 #include <algorithm>
 #include <fstream>
 #include <time.h>
+#include <boost\multiprecision\cpp_int.hpp>//大数
+#include <boost\multiprecision\random.hpp>//大数随机数
+#include <boost\multiprecision\miller_rabin.hpp>//大数素性检测
 
 using namespace std;
 
-typedef long DataType;
+//typedef long DataType;
+typedef boost::multiprecision::cpp_int DataType;
 #define NUM 256
 
 struct Key
@@ -37,6 +42,8 @@ public:
 	DataType getPrime();
 	//判断一个数是否是素数
 	bool isPrime(DataType data);
+	//大数素性检测
+	bool isPrimeBigNum(DataType data);
 	//2、计算n 其中n = p * q
 	DataType getNkey(DataType prime1, DataType prime2);
 	//3、求n的欧拉函数，计算f(n) = f(p) * f(q) = (p - 1)*(q - 1)

@@ -8,15 +8,15 @@ void test()
 	res.getKeys();
 	Key key = res.getKey();
 
-	cout << key.m_EKey << endl;
-	cout << key.m_Dkey << endl;
-	cout << key.m_NKey << endl;
+	cout << "EKey" << key.m_EKey << endl;
+	cout << "DKey" << key.m_Dkey << endl;
+	cout << "NKey" << key.m_NKey << endl;
 
-	DataType original = 2;
-	DataType decout = res.encryption(original, key.m_EKey, key.m_NKey);
-	cout << original << endl;
-	cout << decout << endl;
-	cout << res.decryption(decout, key.m_Dkey, key.m_NKey) << endl;
+	//DataType original = 2;
+	//DataType decout = res.encryption(original, key.m_EKey, key.m_NKey);
+	//cout << original << endl;
+	//cout << decout << endl;
+	//cout << res.decryption(decout, key.m_Dkey, key.m_NKey) << endl;
 }
 
 struct A
@@ -89,7 +89,14 @@ void testBigNumAdd()
 	int b = 123456789;
 
 	cout << a + b << endl;
-	cout << add.add("199999999", "123456789") << endl;
+	//cout << add.sub("199999999", "123456789") << endl;
+
+	BigNum aa = "199999999";
+	BigNum bb = "123456789";
+	cout << aa + bb << endl;
+
+	cout << "aa:" << aa << endl;
+	cout << "bb:" << bb << endl;
 }
 
 void testBigNumSub()
@@ -99,7 +106,14 @@ void testBigNumSub()
 	int b = 123456789;
 
 	cout << a - b << endl;
-	cout << add.sub("199999999", "123456789") << endl;
+	//cout << add.sub("199999999", "123456789") << endl;
+
+	BigNum aa = "199999999";
+	BigNum bb = "123456789";
+	cout << aa - bb << endl;
+
+	cout << "aa:" << aa << endl;
+	cout << "bb:" << bb << endl;
 }
 
 void testBigNumMul()
@@ -109,17 +123,81 @@ void testBigNumMul()
 	int b = 43324;
 
 	cout << a * b << endl;
-	cout << add.mul("33943", "43324") << endl;
+	//cout << add.mul("33943", "43324") << endl;
+
+	BigNum aa = "33943";
+	BigNum bb = "43324";
+	cout << aa * bb << endl;
+
+	cout << "aa:" << aa << endl;
+	cout << "bb:" << bb << endl;
+}
+
+void testBigNumDev()
+{
+	BigNum add;
+	int a = 19191919;
+	int b = 128321;
+
+	cout << a / b << "бнбн" << a%b << endl;
+	//cout << add.dev("19191919", "128321").first << ""бнбн"" << add.dev("19191919", "128321").second << endl;
+
+	BigNum aa = "19191919";
+	BigNum bb = "128321";
+	cout << aa / bb << endl;
+	cout << aa % bb << endl;
+
+	cout << "aa:" << aa << endl;
+	cout << "bb:" << bb << endl;
+}
+
+void testBoostInt()
+{
+	boost::multiprecision::cpp_int ci;
+	ci = 1024;
+	cout << ci << endl;
+
+	string num = "89884656743115795386465259539451236680898848947115328636715040578866337902750481566354238661203768010560056939935696678829394884407208311246423715319737062188883946712432742638151109800623047059726541476042502884419075341171231440736956555270413618581675255342293149119973622969239858152417678164812112068608";
+	boost::multiprecision::cpp_int big(num);
+	cout << big << endl;
+	cout << big + 1 << endl;
+
+	boost::multiprecision::int1024_t n1024(num);
+	cout << n1024 << endl;
+	cout << n1024 + 1 << endl;
+
+	boost::multiprecision::int1024_t n1025 = boost::multiprecision::int1024_t(1) << 1023;
+	cout << n1025 << endl;
+
+	for (boost::multiprecision::int1024_t i = 0; i < n1025; i++)
+	{
+
+	}
+	cout << "finish()" << endl;
+}
+
+void testRandom()
+{
+	boost::random::mt19937 gen(time(nullptr));
+	boost::random::uniform_int_distribution<DataType> dist(0, DataType(1) << 1024);
+	for (int i = 0; i < 100; i++)
+	{
+		DataType num = dist(gen);
+		cout << num << " ";
+	}
 }
 
 int main()
 {
-	//test();
+	test();
 	//testFile();
 	//testRSA();
-	testBigNumAdd();
-	testBigNumSub();
-	testBigNumMul();
+	//testBigNumAdd();
+	//testBigNumSub();
+	//testBigNumMul();
+	//testBigNumDev();
+	//testBoostInt();
+	//testRandom();
 	system("pause");
 	return 0;
 }
