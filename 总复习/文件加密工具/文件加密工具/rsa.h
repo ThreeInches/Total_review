@@ -58,6 +58,8 @@ public:
 	DataType decryption(DataType data, DataType DKey, DataType NKey);
 	//求两个数的最大公约数
 	DataType getCommonDivisor(DataType data1, DataType data2);
+	//扩展欧几里得算法
+	DataType getGcd(DataType a, DataType b, DataType& x, DataType& y);
 	//产生所有的key
 	void getKeys();
 	Key getKey();

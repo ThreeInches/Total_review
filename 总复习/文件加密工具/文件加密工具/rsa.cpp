@@ -169,16 +169,17 @@ DataType rsa::getEKey(DataType orla)
 DataType rsa::getDKey(DataType EKey, DataType orla)
 {
 	cout << "5、求DKey计算e对于f(n)的模反元素d (d * e) % f(n) = 1" << endl;
-	DataType DKey;
-	DKey = orla / EKey;
-	while (1)
-	{
-		if ((DKey * EKey) % orla == 1)
-		{
-			return DKey;
-		}
-		DKey++;
-	}
+	DataType x = 0, y = 0;
+	getGcd(EKey, orla, x, y);
+	return (x % orla + orla) % orla;
+	//while (1)
+	//{
+	//	if ((DKey * EKey) % orla == 1)
+	//	{
+	//		return DKey;
+	//	}
+	//	DKey++;
+	//}
 }
 
 //加密过程：模幂运算 即a^b%c
@@ -232,6 +233,25 @@ DataType rsa::getCommonDivisor(DataType data1, DataType data2)
 	}
 
 	return data2;
+}
+
+//扩展欧几里得算法
+DataType rsa::getGcd(DataType a, DataType b, DataType& x, DataType& y)
+{
+	if (b == 0)
+	{
+		x = 1;
+		y = 0;
+		return a;
+	}
+
+	DataType gcd = getGcd(b, a%b, x, y);
+	DataType x1 = x, y1 = y;
+
+	x = y1;
+	y = x1 - a / b*y1;
+
+	return gcd;
 }
 
 void rsa::getKeys()

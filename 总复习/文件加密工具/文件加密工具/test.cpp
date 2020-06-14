@@ -12,11 +12,11 @@ void test()
 	cout << "DKey" << key.m_Dkey << endl;
 	cout << "NKey" << key.m_NKey << endl;
 
-	//DataType original = 2;
-	//DataType decout = res.encryption(original, key.m_EKey, key.m_NKey);
-	//cout << original << endl;
-	//cout << decout << endl;
-	//cout << res.decryption(decout, key.m_Dkey, key.m_NKey) << endl;
+	DataType original = 2;
+	DataType decout = res.encryption(original, key.m_EKey, key.m_NKey);
+	cout << original << endl;
+	cout << decout << endl;
+	cout << res.decryption(decout, key.m_Dkey, key.m_NKey) << endl;
 }
 
 struct A
