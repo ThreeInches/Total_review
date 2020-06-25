@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C661597A-595D-4003-8FB9-4167872FEC8C}</ProjectGuid>
-    <RootNamespace>求路径总数</RootNamespace>
+    <ProjectGuid>{E629934D-066D-41CC-84EF-8F0A71E42E6B}</ProjectGuid>
+    <RootNamespace>井字棋</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,8 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="123.cpp" />
-    <ClCompile Include="求路径总数.cpp" />
+    <ClCompile Include="井字棋.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

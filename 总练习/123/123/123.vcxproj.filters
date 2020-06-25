@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="求路径总数.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="123.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
