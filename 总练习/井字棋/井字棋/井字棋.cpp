@@ -6,10 +6,10 @@ using namespace std;
 class Board
 {
 public:
-	bool checkwon(vector<vector<int>> board)
+	bool checkWon(vector<vector<int>> board)
 	{
 		int row = board.size();
-		int i, j, sum;
+		int sum;
 		for (int i = 0; i < row; i++)
 		{
 			sum = 0;
@@ -26,7 +26,7 @@ public:
 		for (int i = 0; i < row; i++)
 		{
 			sum = 0;
-			for (j = 0; j < row; j++)
+			for (int j = 0; j < row; j++)
 			{
 				sum += board[j][i];
 			}
@@ -55,10 +55,8 @@ public:
 		{
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+
+		return false;
 	}
 };
 
