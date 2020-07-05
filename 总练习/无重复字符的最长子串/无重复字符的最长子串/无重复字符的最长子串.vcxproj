@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BDA42A4F-6560-4577-B242-783C02C9EBAB}</ProjectGuid>
-    <RootNamespace>将有序数组转换为二叉搜索树</RootNamespace>
+    <ProjectGuid>{3DF33DE1-438A-4559-B50A-381C77C4E580}</ProjectGuid>
+    <RootNamespace>无重复字符的最长子串</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,7 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="将有序数组转换为二叉搜索树.cpp" />
+    <ClCompile Include="无重复字符的最长子串.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
