@@ -14,7 +14,8 @@ public:
 
 int main()
 {
-
+	BinInsert a;
+	cout << a.binInsert(1024, 19, 2, 6) << endl;
 	system("pause");
 	return 0;
 }

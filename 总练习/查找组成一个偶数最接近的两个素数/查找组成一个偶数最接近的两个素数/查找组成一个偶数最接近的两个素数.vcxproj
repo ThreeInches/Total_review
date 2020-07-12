@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{837F3B87-C441-4A1C-A8F8-CA5D3519F074}</ProjectGuid>
-    <RootNamespace>二进制插入</RootNamespace>
+    <ProjectGuid>{AEAE18D2-EB6C-44C3-9337-7157AF0A2A2D}</ProjectGuid>
+    <RootNamespace>查找组成一个偶数最接近的两个素数</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,7 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="二进制插入.cpp" />
+    <ClCompile Include="查找组成一个偶数最接近的两个素数.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
