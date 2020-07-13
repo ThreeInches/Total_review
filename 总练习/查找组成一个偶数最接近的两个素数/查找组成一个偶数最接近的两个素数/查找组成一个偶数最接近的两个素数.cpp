@@ -1,39 +1,35 @@
 #include <iostream>
-#include <functional>
+#include <algorithm>
 
 using namespace std;
 
-bool isPrime(int m)
+bool isPrime(int n)
 {
-	for (int i = 2; i <= sqrt(m); i++)
+	for (int i = 2; i <= sqrt(n); i++)
 	{
-		if (m % i == 0)
+		if (n % i == 0)
 		{
 			return false;
 		}
-
-		return true;
 	}
+
+	return true;
 }
 
 int main()
 {
 	int m;
-	int half;
-	int i;
-
 	while (cin >> m)
 	{
-		half = m / 2;
-		for (i = half; i > 0; i--)
+		int half = m / 2;
+		for (int i = half; i >= 2; i--)
 		{
 			if (isPrime(i) && isPrime(m - i))
 			{
+				cout << i << endl << m - i << endl;
 				break;
 			}
 		}
-
-		cout << i << endl << m - i << endl;
 	}
 	system("pause");
 	return 0;
