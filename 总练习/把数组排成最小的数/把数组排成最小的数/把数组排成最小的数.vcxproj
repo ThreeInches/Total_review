@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A033026E-2A3E-4C38-92E4-BE290044F891}</ProjectGuid>
-    <RootNamespace>连续子数组的最大和</RootNamespace>
+    <ProjectGuid>{AF104029-2610-4260-8673-50AD4D1C5116}</ProjectGuid>
+    <RootNamespace>把数组排成最小的数</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,7 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="连续子数组的最大和.cpp" />
+    <ClCompile Include="把数组排成最小的数.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

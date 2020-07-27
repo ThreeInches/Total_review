@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="连续子数组的最大和.cpp">
+    <ClCompile Include="回文数索引.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
