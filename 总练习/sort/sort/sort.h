@@ -8,13 +8,13 @@ class Sort
 {
 public:
 	void BubbleSort(vector<int>& array);
-	void SelectSort();
-	void InsertSort();
-	void ShellSort();
-	void QuickSort();
-	void MergeSort();
-	void HeapSort();
-	void CountSort();
-	void BucketSort();
-	void RadixSort();
+	void SelectSort(vector<int>& array);
+	void InsertSort(vector<int>& array);
+	void ShellSort(vector<int>& array);
+	void QuickSort(vector<int>& array);
+	void MergeSort(vector<int>& array);
+	void HeapSort(vector<int>& array);
+	void CountSort(vector<int>& array);
+	void BucketSort(vector<int>& array);
+	void RadixSort(vector<int>& array);
 };

@@ -10,7 +10,9 @@ int main()
 	}
 	cout << endl;
 
-	a.BubbleSort(array);
+	//a.BubbleSort(array);
+	//a.SelectSort(array);
+	a.InsertSort(array);
 
 	for (auto& e : array)
 	{
