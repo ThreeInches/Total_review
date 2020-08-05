@@ -12,7 +12,11 @@ int main()
 
 	//a.BubbleSort(array);
 	//a.SelectSort(array);
-	a.InsertSort(array);
+	//a.InsertSort(array);
+	//a.ShellSort(array);
+	//a.MergeSort(array);
+	//a.QuickSort(array);
+	a.QuickSortNon(array);
 
 	for (auto& e : array)
 	{
