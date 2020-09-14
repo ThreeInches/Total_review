@@ -123,8 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="123.cpp" />
     <ClCompile Include="abc.cpp" />
     <ClCompile Include="BFS.cpp" />
+    <ClCompile Include="两点间的路径.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyGraph.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

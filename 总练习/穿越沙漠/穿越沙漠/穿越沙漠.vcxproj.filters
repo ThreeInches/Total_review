@@ -21,5 +21,16 @@
     <ClCompile Include="abc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="两点间的路径.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="123.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

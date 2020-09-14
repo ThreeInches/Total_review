@@ -45,7 +45,7 @@ void Create(GRAPH *G)
 void BFS(GRAPH *G, int k)
 {
 	int queue[MAX_QUEUE]; /* 队列 */
-	int front = -1, rear = -1, amount = 0;
+	int front = -1, rear = -1, amount = 0;//两代男件的
 	int visited[MAX_GRAPH]; /* 标记已经访问过的元素 */
 	int i, j;
 
