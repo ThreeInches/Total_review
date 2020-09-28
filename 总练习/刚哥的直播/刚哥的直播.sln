@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "刚哥的直播", "刚哥的直播\刚哥的直播.vcxproj", "{EED879A8-73FD-4498-83D3-35E5F36F727C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Debug|x64.ActiveCfg = Debug|x64
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Debug|x64.Build.0 = Debug|x64
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Debug|x86.ActiveCfg = Debug|Win32
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Debug|x86.Build.0 = Debug|Win32
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Release|x64.ActiveCfg = Release|x64
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Release|x64.Build.0 = Release|x64
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Release|x86.ActiveCfg = Release|Win32
+		{EED879A8-73FD-4498-83D3-35E5F36F727C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D559D19C-9C03-4959-B71C-B19A445C010C}
+	EndGlobalSection
+EndGlobal
